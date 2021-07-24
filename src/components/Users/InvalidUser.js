@@ -1,11 +1,21 @@
-import React from 'react'
-
-const InvalidUser = () => {
+import React from "react";
+import Card from "./Card";
+import Button from "../UI/Button";
+import classes from "./InvalidUser.module.css";
+const InvalidUser = (props) => {
   return (
-    <div>
+    <Card className={classes.modal}>
+      <header className={classes.header}>
+        <h2>{props.title}</h2>
+      </header>
+      <div className={classes.content}>
+        <p>{props.message}</p>
+      </div>
+      <footer className={classes.actions}>
+        <Button>Okay</Button>
+      </footer>
+    </Card>
+  );
+};
 
-    </div>
-  )
-}
-
-export default InvalidUser
+export default InvalidUser;
