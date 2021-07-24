@@ -25,8 +25,7 @@ const AddUser = (props) => {
     if (+year < 1) {
       return;
     }
-    const newUser = [name, year];
-    props.addUser(newUser);
+    props.addUser(name, year);
     setName('');
     setYear('');
   };

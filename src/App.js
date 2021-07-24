@@ -8,13 +8,14 @@ function App() {
   ];
   const [users, setUsers] = useState(DUMMY_DATA);
   //addUserHandler function
-  const addUserHandler = (value) => {
-    console.log('111');
-    setUsers(value, ...users)
+  const addUserHandler = (nName, nAge) => {
+    setUsers((prevUserList) => {
+      return [{ name: nName, age: nAge}, ...prevUserList]
+    })
   };
   return (
     <div>
-      <AddUser adUser={addUserHandler} />
+      <AddUser addUser={addUserHandler} />
       <UsersList users={users} />
     </div>
   );
